@@ -1,0 +1,11 @@
+The bottleneck in the performance of the linked list implementation is
+the speed at which adding values to the set takes place. It takes O(n)
+time to add an element to a linked list set on average, and so as N increases,
+the speed of the execution increases, and since we're adding N elements to the
+set, the overal speed is close to O(n^2), which is supported by the graph.
+I know its the add performance, and not the speed of the union/intersection
+operations, because when I optimized the linked list adding by keeping the 
+head, the tail, and the last added pointer, and using the closest pointer,
+the performance was on the order of the array implementation. The array 
+has an access speed of O(1), so regardless of N, the adding time is only O(n), 
+not the O(n^2) of the linked list. (O(n) because adding n elements).
