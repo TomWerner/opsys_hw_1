@@ -27,7 +27,8 @@ list_item_t* createItem(char* value) {
         printf("Error allocating space for new item's value\n");
         return NULL;
     }
-    strncpy(newItem->value, value, strlen(value));
+    strncpy(newItem->value, value, strlen(value) + 1);
+    newItem->value[strlen(value)] = '\0';
 
     newItem->next = NULL;
     newItem->prev = NULL;

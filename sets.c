@@ -10,7 +10,8 @@
 #define MILLIS_PER_SECOND 1000
 
 //toggle USE_ARRAYS define to include the desired version of the set implementation
-//#define USE_ARRAYS
+#define USE_ARRAYS
+//#define USE_LIST_OPT
 
 #ifdef USE_ARRAYS
 typedef struct {
@@ -77,7 +78,11 @@ void set_add_elem(set_t *a, int e) {
         iterator = a->head;
     }
     else {
+#ifdef USE_LIST_OPT
+        iterator = a->last_used;
+#else
         iterator = a->head;
+#endif
     }
     for (i = 0; iterator != NULL; i++, iterator = iterator->next) {
         if (i == e) {
