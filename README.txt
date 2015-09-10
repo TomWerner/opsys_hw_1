@@ -17,3 +17,5 @@ Problem 5) ./Problem5
    Toggle USE_ARRAY on and off. If array is off, you can define USE_LIST_OPT to enable a simple
    list optimization (it keeps track of the last accessed item and uses that instead of the head
    to add elements if its faster).
+   
+   The graphs are in Problem5.xlsx
